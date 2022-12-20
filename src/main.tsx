@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouteObject, RouterProvider } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
 import Hello from "./components/Hello";
 import PrivateRoutes from "./components/Protected";
 import Login from "./components/Login";
+import UserCon from "./components/UserCon";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/log",
+    element: <UserCon />,
   },
 ]);
 
