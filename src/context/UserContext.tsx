@@ -1,9 +1,9 @@
 import { Context, createContext, Dispatch, SetStateAction } from "react";
 interface UsCont {
   isLogged: boolean;
-  setIsLogged: Dispatch<SetStateAction<boolean>>;
+  setIsLogged: (arg: boolean) => void;
 }
-export const UserContext = createContext({
+export const UserContext: UsCont = createContext({
   isLogged: false,
-  setIsLogged: (): void => {},
+  setIsLogged: () => {},
 });
