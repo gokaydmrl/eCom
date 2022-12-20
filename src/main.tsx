@@ -2,21 +2,25 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
-import { BrowserRouter, createBrowserRouter, Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
 import Hello from "./components/Hello";
-import Protected from "./components/Protected";
+import PrivateRoutes from "./components/Protected";
 import Login from "./components/Login";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <PrivateRoutes children={<App />} />,
     errorElement: <ErrorPage />,
   },
   {
     path: "/hello",
-    element: <Hello />,
+    element: <PrivateRoutes children={<Hello />} />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
@@ -28,18 +32,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <App />
-    {/* <BrowserRouter>
-      <Routes>
-        <Route element={<Protected />}>
-          <Route path="/hello" element={<Hello />} />
-          <Route path="/" element={<App />} />
-          <Route path="/login" element={<Login />} />
-        </Route>
-      </Routes>
-    </BrowserRouter> */}
+    <RouterProvider router={router} />
+    {/* <App /> */}
   </React.StrictMode>
 );
-/*
- isSignedIn={isSignedIn} children={children} 
- */

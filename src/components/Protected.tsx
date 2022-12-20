@@ -1,11 +1,13 @@
+import { ReactElement, ReactNode } from "react";
 import { Navigate, Outlet } from "react-router-dom";
+const PrivateRoutes = ({ children }: { children: ReactNode }) => {
+  const auth = true;
+  console.log("auth", auth);
 
-const Protected: () => JSX.Element = () => {
-  const auth = true; // determine if authorized, from context or however you're doing it
-
-  // If authorized, return an outlet that will render child elements
-  // If not, return element that will navigate to login page
-  return auth ? <Outlet /> : <Navigate to="/login" replace />;
+  return (
+    <div>
+      auth ? {children} : <Navigate to="/login" />
+    </div>
+  );
 };
-
-export default Protected;
+export default PrivateRoutes;
