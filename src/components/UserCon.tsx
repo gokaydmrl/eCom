@@ -1,6 +1,6 @@
-import React, { Dispatch, SetStateAction, useContext, useState } from "react";
+import React, { Dispatch, PropsWithChildren, SetStateAction, useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
-const UserCon: React.FC = ({ child }: any) => {
+const UserCon: React.FC<PropsWithChildren> = ({ children }) => {
   //  const [userCon, setUserCon] = useState(useContext(UserContext));
   const [isLogged, setIsLogged] = useState(false);
   console.log("this usercon", UserContext.Provider);
@@ -18,7 +18,7 @@ const UserCon: React.FC = ({ child }: any) => {
   return (
     <div>
       <UserContext.Provider value={value}>
-        {child}
+        {children}
         {/* <div>{isLogged ? "true" : "false"}</div>
         <button
           onClick={() => {
