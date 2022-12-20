@@ -4,7 +4,7 @@ import { UserContext } from "../context/UserContext";
 
 const Login = () => {
   const userCon = useContext(UserContext);
-  console.log("login userCon", userCon);
+  console.log("login userCon", userCon.isLogged);
 
   return (
     <div>

@@ -23,10 +23,6 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
-  {
-    path: "/log",
-    element: <UserCon />,
-  },
 ]);
 
 // const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
@@ -37,7 +33,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <UserCon>
+      <RouterProvider router={router} />
+    </UserCon>
     {/* <App /> */}
   </React.StrictMode>
 );

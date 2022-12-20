@@ -11,5 +11,5 @@ interface UsCont {
 
 export const UserContext = createContext<UsCont>({
   isLogged: false,
-  setIsLogged: (isLogged) => (isLogged = !isLogged),
+  setIsLogged: () => {},
 });
