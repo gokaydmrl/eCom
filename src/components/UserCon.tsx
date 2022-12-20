@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction, useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 const UserCon = () => {
   //  const [userCon, setUserCon] = useState(useContext(UserContext));
-  const [isLogged, setIsLogged] = useState<boolean>(false);
+  const [isLogged, setIsLogged] = useState(false);
   console.log("this usercon", UserContext.Provider);
   // const { isLogged, setIsLogged } = useContext(UserContext);
   console.log("userLogged.isLogged", isLogged);
@@ -11,7 +11,7 @@ const UserCon = () => {
 
   interface Value {
     isLogged: boolean;
-    setIsLogged: (arg: boolean) => void;
+    setIsLogged: Dispatch<SetStateAction<boolean>>;
   }
   const value: Value = { isLogged, setIsLogged };
 
@@ -21,7 +21,7 @@ const UserCon = () => {
         <div>{isLogged ? "true" : "false"}</div>
         <button
           onClick={() => {
-            return setIsLogged(isLogged);
+            return setIsLogged((isLogged) => !isLogged);
           }}>
           bas
         </button>

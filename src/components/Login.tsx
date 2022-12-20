@@ -9,11 +9,7 @@ const Login = () => {
   return (
     <div>
       Login
-      <div>
-        <UserContext.Provider value={userCon}>
-          {userCon.isLogged ? "true" : "false"}
-        </UserContext.Provider>
-      </div>
+      <div>{userCon.isLogged ? "true" : "false"}</div>
     </div>
   );
 };
