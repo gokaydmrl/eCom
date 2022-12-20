@@ -23,10 +23,7 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
-  {
-    path: "/log",
-    element: <UserCon />,
-  },
+  
 ]);
 
 // const [isSignedIn, setIsSignedIn] = useState<boolean>(false);

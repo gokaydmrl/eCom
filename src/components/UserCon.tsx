@@ -8,11 +8,10 @@ const UserCon = () => {
   console.log("userLogged.isLogged", isLogged);
   // const x = setIsLogged(true);
   // console.log("x", x);
-  type Dispatch<A> = (value: A) => void;
 
   interface Value {
     isLogged: boolean;
-    setIsLogged: Dispatch<boolean>;
+    setIsLogged: (arg: boolean) => void;
   }
   const value: Value = { isLogged, setIsLogged };
 
