@@ -1,7 +1,7 @@
-import { ReactElement, ReactNode } from "react";
+import { PropsWithChildren, ReactElement, ReactNode } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 const PrivateRoutes = ({ children }: { children: ReactNode }) => {
-  const auth = true;
+  const auth = false;
   console.log("auth", auth);
 
   return <div>{auth ? children : <Navigate to="/login" />}</div>;

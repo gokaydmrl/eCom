@@ -8,6 +8,7 @@ import Hello from "./components/Hello";
 import PrivateRoutes from "./components/Protected";
 import Login from "./components/Login";
 import UserCon from "./components/UserCon";
+import Users from "./components/Users";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,16 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/users",
+    element: <Users />,
+    loader: () =>
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((data) => {
+          return data;
+        }),
   },
 ]);
 

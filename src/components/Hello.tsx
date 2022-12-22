@@ -3,6 +3,7 @@ import "../App.css";
 import { UserContext } from "../context/UserContext";
 const Hello = () => {
   const userCon = useContext(UserContext);
+  console.log("hello", userCon);
 
   return (
     <>

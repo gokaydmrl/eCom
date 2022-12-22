@@ -6,12 +6,13 @@ import PrivateRoutes from "./components/Protected";
 import { UserContext } from "./context/UserContext";
 function App() {
   const x = useContext(UserContext);
-  console.log("login", x);
+  console.log("app x", x);
 
   return (
     <>
       <button onClick={() => x.setIsLogged(true)}>fuck to true</button>
       <p>{x.isLogged ? "true" : "false"}</p>
+      <Hello />
     </>
     // <Router>
     //   <Routes>

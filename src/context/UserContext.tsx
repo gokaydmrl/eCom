@@ -1,5 +1,4 @@
 import { Context, createContext, Dispatch, SetStateAction } from "react";
-// const isLogged = false;
 
 type UpdateType = Dispatch<SetStateAction<boolean>>;
 // const defaultUpdate: UpdateType = () => !isLogged;
