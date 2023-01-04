@@ -62,7 +62,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <ThemeCon>
       <MainParentComponent>
         <DarkMode />
-        <Container fixed maxWidth="xl">
+        <Container fixed maxWidth="xl" sx={{ maxWidth: { sm: "xl" } }}>
           <PrimaAppBar />
 
           <Navbar />
