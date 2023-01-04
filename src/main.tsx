@@ -1,4 +1,5 @@
-import React from "react";
+import "./App.css";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
@@ -9,6 +10,16 @@ import PrivateRoutes from "./components/Protected";
 import Login from "./components/Login";
 import UserCon from "./components/UserCon";
 import Users from "./components/Users";
+import Dialog from "./components/Dialog";
+import Navbar from "./components/Navbar";
+import { Box, Container, Stack } from "@mui/material";
+import Footer from "./components/Footer";
+import PrimaAppBar from "./components/PrimAppBar";
+import NappBar from "./components/NappBar";
+import DarkMode from "./components/DarkMode";
+import ThemeCon from "./components/ThemeCon";
+import { IThemeContext } from "./context/ThemeContext";
+import MainParentComponent from "./components/MainParentComponent";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/dialog",
+    element: <Dialog />,
   },
   {
     path: "/users",
@@ -44,9 +59,24 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <UserCon>
-      <RouterProvider router={router} />
-    </UserCon>
+    <ThemeCon>
+      <MainParentComponent>
+        <DarkMode />
+        <Container fixed maxWidth="xl">
+          <PrimaAppBar />
+
+          <Navbar />
+          <NappBar />
+          <Stack direction="column" justifyContent="space-between" spacing={2}>
+            <UserCon>
+              <RouterProvider router={router} />
+            </UserCon>
+          </Stack>
+          <Footer />
+        </Container>
+      </MainParentComponent>
+    </ThemeCon>
+
     {/* <App /> */}
   </React.StrictMode>
 );

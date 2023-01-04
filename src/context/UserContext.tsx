@@ -9,6 +9,6 @@ interface UsCont {
 }
 
 export const UserContext = createContext<UsCont>({
-  isLogged: false,
+  isLogged: true,
   setIsLogged: () => {},
 });

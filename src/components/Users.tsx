@@ -1,6 +1,7 @@
+import { Box, Grid } from "@mui/material";
 import React, { useState } from "react";
-import "../App.css";
 import { useLoaderData } from "react-router-dom";
+import Lay from "./Lay";
 
 const Users = () => {
   type LoaderDataType = {
@@ -15,11 +16,16 @@ const Users = () => {
   console.log("data", data);
 
   return (
-    <div>
-      {data.map((d: LoaderDataType) => {
-        return <div key={d.id}>{d.name}</div>;
-      })}
-    </div>
+    <Box>
+      <Grid alignItems="center" justifyContent="center" >
+        {data.map((d: LoaderDataType) => {
+          return <div key={d.id}>{d.name}</div>;
+        })}
+        <br />
+        <Lay />
+      </Grid>
+
+    </Box>
   );
 };
 

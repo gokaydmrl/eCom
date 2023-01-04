@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <button onClick={() => x.setIsLogged(true)}>fuck to true</button>
+      <button onClick={() => x.setIsLogged(true)}>click to true</button>
       <p>{x.isLogged ? "true" : "false"}</p>
       <Hello />
     </>
